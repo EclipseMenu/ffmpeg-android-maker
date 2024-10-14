@@ -40,10 +40,12 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --ranlib=${FAM_RANLIB} \
   --strip=${FAM_STRIP} \
   --extra-cflags="-O3 -fPIC $DEP_CFLAGS" \
-  --extra-ldflags="$DEP_LD_FLAGS" \
-  --enable-shared \
-  --disable-static \
+  --extra-ldflags="$DEP_LD_FLAGS -Wl,-Bsymbolic" \
+  --disable-shared \
+  --enable-static \
   --disable-vulkan \
+  --disable-asm \
+  --enable-pic \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
   $ADDITIONAL_COMPONENTS || exit 1
