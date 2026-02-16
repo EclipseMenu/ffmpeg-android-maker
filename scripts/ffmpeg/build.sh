@@ -45,6 +45,8 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --enable-static \
   --disable-vulkan \
   --disable-asm \
+  --enable-jni \
+  --enable-mediacodec \
   --enable-pic \
   --pkg-config=${PKG_CONFIG_EXECUTABLE} \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
